@@ -37,7 +37,6 @@ for db in dbs:
             for doc in query:   
                 
                 schedule = doc.get('schedule', None)
-
                 schedule_start = None
 
                 if schedule is not None:
