@@ -87,6 +87,7 @@ for db in dbs:
                         open_app = doc.get('event', None)
                         if open_app is not None:
                             oa = open_app.get('n:oa')
+                        if oa is not None:
                             oa_total = oa.get('TOTAL')
                             print("Open App: " + str(oa_total))
 
