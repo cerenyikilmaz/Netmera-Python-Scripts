@@ -90,3 +90,7 @@ for db in dbs:
                         if oa is not None:
                             oa_total = oa.get('TOTAL')
                             print("Open App: " + str(oa_total))
+
+    else:
+
+        print("App Key: " + db + "no message data.")
