@@ -9,6 +9,8 @@ from re import S
 import pymongo
 from pymongo.mongo_client import MongoClient
 import os
+from pymongo.common import validate
+
 
 # mongo connection string.
 # this is a variable, it gets the connection string from env.
@@ -27,7 +29,7 @@ for db in dbs:
     mycol = mydb["message"]
     mycol2 = mydb["appStatsDaily"]
     count = mycol.count()
-
+    
     if count > 0:
 
         print("App Key: " + db)
