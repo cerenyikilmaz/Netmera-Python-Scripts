@@ -32,12 +32,12 @@ for automationDbName in automationDbNames:
             mycol = mydb["message"]
 
             today = datetime.datetime.utcnow()
-            nDayAgo = datetime.timedelta(days = 100)
+            nDayAgo = datetime.timedelta(days = 10)
             deltaDate = today - nDayAgo
 
             # Connect to message mongo 
 
-            for doc in mycol.find({"endDate" : {"$gt" : deltaDate}, "msgMethod" : "AUTOMATED", "sendStatus": "DEACTIVE"}, {"triggerId" : 1, "id" : 1}):
+            for doc in mycol.find({"endDate" : {"$lt" : deltaDate}, "msgMethod" : "AUTOMATED", "sendStatus": "DEACTIVE"}, {"triggerId" : 1, "id" : 1}):
                                 
                 mydb2 = mongoAutomationClient["tsDB_" + messageDbName]
                 mycol2 = mydb2["tsn_"+str(doc.get('triggerId'))]
