@@ -15,7 +15,7 @@ from pymongo.common import validate
 # mongo connection string.
 # this is a variable, it gets the connection string from env.
 # for local tests you can add a temporary enviroment variable like this;
-# export python_env_mongo=mongodb://netmera-preprod:e82addefda53a123eb2e7e0e04cde41c@10.34.167.208:27017
+# export python_env_mongo=<mongo connection string>
 # for permanent solution you can add this in your .bash_profile or .bashrc file.
 # for production you must add this string in your .bashrc file
 
